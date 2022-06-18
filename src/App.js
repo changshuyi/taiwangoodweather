@@ -33,7 +33,7 @@ function App() {
       <Navbar toggle={toggle} />
       <Dropdown isOpen={isOpen} toggle={toggle} />
       <Routes>
-        <Route path="/taipeigoodgoodeat" exact element={<Home />}></Route>
+        <Route path="/taiwangoodweather" exact element={<Home />}></Route>
         <Route path="/menu" element={<Menu />}></Route>
         <Route path="/about" element={<About />}></Route>
       </Routes>
