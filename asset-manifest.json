@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/taiwangoodweather/static/css/main.073c9b0a.css",
+    "main.js": "/taiwangoodweather/static/js/main.357cb1d3.js",
+    "static/js/787.5bd96483.chunk.js": "/taiwangoodweather/static/js/787.5bd96483.chunk.js",
+    "static/media/logo.svg": "/taiwangoodweather/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/taiwangoodweather/index.html",
+    "main.073c9b0a.css.map": "/taiwangoodweather/static/css/main.073c9b0a.css.map",
+    "main.357cb1d3.js.map": "/taiwangoodweather/static/js/main.357cb1d3.js.map",
+    "787.5bd96483.chunk.js.map": "/taiwangoodweather/static/js/787.5bd96483.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.357cb1d3.js"
+  ]
+}
