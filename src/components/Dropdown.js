@@ -11,10 +11,10 @@ const Dropdown = ({ isOpen, toggle }) => {
       }
     >
       <Link to="/taiwangoodweather" className="p-4">
-        Home
+        全台及時天氣
       </Link>
-      <Link to="/menu" className="p-4">
-        Meun
+      <Link to="/week" className="p-4">
+        一周天氣
       </Link>
       <Link to="/about" className="p-4">
         About

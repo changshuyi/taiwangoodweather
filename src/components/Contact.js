@@ -11,105 +11,69 @@ import {
 
 const Contact = () => {
   const [locationReponse, setLocationReponse] = useState();
+  // 當前天氣所以先只取time[0]的部分
+  const weatherCurrentElement = (element) => {
+    const weatherElements = element.reduce((neededElements, item) => {
+      if (['Wx', 'PoP', 'CI', 'MaxT', 'MinT'].includes(item.elementName)) {
+        neededElements[item.elementName] = item.time[0].parameter;
+      }
 
-  const weatherElement = (element) => {
-    return element?.map((elementItem, _) => {
-      return elementItem?.time?.map((timeItem, _) => {
-        const nowDateTime = moment(new Date(), 'YYYY-MM-DD HH:mm:ss');
-        const startDateTime = moment(
-          timeItem?.startTime,
-          'YYYY-MM-DD HH:mm:ss'
-        );
-        const endDateTime = moment(timeItem?.endTime, 'YYYY-MM-DD HH:mm:ss');
-        if (nowDateTime.isBetween(startDateTime, endDateTime)) {
-          if (elementItem?.elementName === 'Wx') {
-            return (
-              <CardBody className="text-center">
-                <Typography variant="h5" className="mb-2">
-                  {timeItem?.parameter?.parameterName}
-                </Typography>
-              </CardBody>
-            );
-          }
-          if (elementItem?.elementName === 'PoP') {
-            return (
-              <CardFooter
-                divider
-                className="flex items-center justify-between py-3"
-              >
-                <Typography variant="small">降雨機率</Typography>
-                <Typography variant="small">
-                  {timeItem?.parameter?.parameterName + '%'}
-                </Typography>
-                <Typography
-                  variant="small"
-                  color="grey"
-                  className="flex gap-1"
-                ></Typography>
-              </CardFooter>
-            );
-          }
-          if (elementItem?.elementName === 'MaxT') {
-            return (
-              <CardFooter
-                divider
-                className="flex items-center justify-between py-3"
-              >
-                <Typography variant="small">最高溫度</Typography>
-                <Typography variant="small">
-                  {timeItem?.parameter?.parameterName + '度'}
-                </Typography>
-                <Typography
-                  variant="small"
-                  color="grey"
-                  className="flex gap-1"
-                ></Typography>
-              </CardFooter>
-            );
-          }
-          if (elementItem?.elementName === 'MinT') {
-            return (
-              <CardFooter
-                divider
-                className="flex items-center justify-between py-3"
-              >
-                <Typography variant="small">最低溫度</Typography>
-                <Typography variant="small">
-                  {timeItem?.parameter?.parameterName + '度'}
-                </Typography>
-                <Typography
-                  variant="small"
-                  color="grey"
-                  className="flex gap-1"
-                ></Typography>
-              </CardFooter>
-            );
-          }
-          if (elementItem?.elementName === 'CI') {
-            return (
-              <CardFooter
-                divider
-                className="flex items-center justify-between py-3"
-              >
-                <Typography variant="small">舒適度</Typography>
-                <Typography variant="small">
-                  {timeItem?.parameter?.parameterName + '度'}
-                </Typography>
-                <Typography
-                  variant="small"
-                  color="grey"
-                  className="flex gap-1"
-                ></Typography>
-              </CardFooter>
-            );
-          }
-        }
-        return '';
-      });
-    });
+      return neededElements;
+    }, {});
+
+    return (
+      <>
+        <CardBody className="text-center">
+          <Typography variant="h5" className="mb-2">
+            {weatherElements.Wx.parameterName}
+          </Typography>
+          <Typography variant="h5" className="mb-2">
+            {weatherElements.CI.parameterName}
+          </Typography>
+        </CardBody>
+        <CardFooter divider className="flex items-center justify-between py-3">
+          <Typography variant="small">降雨機率</Typography>
+          <Typography variant="small">
+            {weatherElements.PoP.parameterName + '%'}
+          </Typography>
+          <Typography
+            variant="small"
+            color="grey"
+            className="flex gap-1"
+          ></Typography>
+        </CardFooter>
+
+        <CardFooter divider className="flex items-center justify-between py-3">
+          <Typography variant="small">最高溫度</Typography>
+          <Typography variant="small">
+            {weatherElements.MaxT.parameterName + '度'}
+          </Typography>
+          <Typography
+            variant="small"
+            color="grey"
+            className="flex gap-1"
+          ></Typography>
+        </CardFooter>
+
+        <CardFooter divider className="flex items-center justify-between py-3">
+          <Typography variant="small">最低溫度</Typography>
+          <Typography variant="small">
+            {weatherElements.MinT.parameterName + '度'}
+          </Typography>
+          <Typography
+            variant="small"
+            color="grey"
+            className="flex gap-1"
+          ></Typography>
+        </CardFooter>
+      </>
+    );
   };
 
-  const GetApiResponse = () => {
+  // 今明 36 小時天氣預報 (全部)
+  const weatherForecast = () => {};
+
+  const getApiResponse = () => {
     axios({
       method: 'GET',
       url: 'https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-18B21A55-8309-4060-AD1E-3E4798E51B42',
@@ -131,7 +95,7 @@ const Contact = () => {
   };
 
   useEffect(() => {
-    GetApiResponse();
+    getApiResponse();
   }, []);
 
   return (
@@ -142,10 +106,10 @@ const Contact = () => {
             return (
               // Wx(天氣現象)、MaxT(最高溫度)、MinT(最低溫度)、CI(舒適度)、PoP(降雨機率)
               <Card
-                className="w-96 m-10 py-6 px-3 font-mono"
+                className="w-96 m-10 py- px-3 font-mono"
                 key={'location_' + index}
               >
-                <CardHeader className="relative h-56 text-5xl bg-grey-700 text-blue-grey-50 p-3 flex">
+                <CardHeader className="relative h-56 text-5xl border-blue-900 bg-light-blue-50 text-blue-grey-700 p-3 flex">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="h-8 w-8"
@@ -167,7 +131,7 @@ const Contact = () => {
                   </svg>
                   {item?.locationName}
                 </CardHeader>
-                {weatherElement(item?.weatherElement)}
+                {weatherCurrentElement(item?.weatherElement)}
               </Card>
             );
           })}

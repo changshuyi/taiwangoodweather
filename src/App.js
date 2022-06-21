@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages';
 import About from './pages/about';
-import Menu from './pages/menu';
+import Week from './pages/week';
 
 import { Routes, Route } from 'react-router-dom';
 import Dropdown from './components/Dropdown';
@@ -15,30 +15,35 @@ function App() {
     setIsOpen(!isOpen);
   };
   useEffect(() => {
-    const hideMenu = () => {
+    const hideWeek = () => {
       if (window.innerWidth > 720 && isOpen) {
         setIsOpen(false);
       }
     };
 
-    window.addEventListener('resize', hideMenu);
+    window.addEventListener('resize', hideWeek);
 
     return () => {
-      window.removeEventListener('resize', hideMenu);
+      window.removeEventListener('resize', hideWeek);
     };
   });
 
   return (
-    <>
+    <div
+      style={{
+        background:
+          'linear-gradient(to right, #2980b9, #6dd5fa, #ffffff)' /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */,
+      }}
+    >
       <Navbar toggle={toggle} />
       <Dropdown isOpen={isOpen} toggle={toggle} />
       <Routes>
         <Route path="/taiwangoodweather" exact element={<Home />}></Route>
-        <Route path="/menu" element={<Menu />}></Route>
+        <Route path="/week" element={<Week />}></Route>
         <Route path="/about" element={<About />}></Route>
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 }
 
