@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = ({ toggle }) => {
   return (
-    <nav className="flex justify-between item-center h-16 text-black relative shadow-sm font-mono pt-3 bg-gradient-to-r to-blue-100 from-cyan-80 ">
+    <nav className="flex justify-between item-center h-16 text-white relative shadow-sm pt-3 bg-gradient-to-r to-blue-100 from-cyan-80 ">
       <Link to="/" className="pl-8 text-2xl">
         寶島好天氣
       </Link>
@@ -28,7 +28,7 @@ const Navbar = ({ toggle }) => {
           全台及時天氣
         </Link>
         <Link to="/week" className="pl-4">
-          未來一周預報
+          各地未來一周預報
         </Link>
         <Link to="/about" className="pl-4">
           關於我

@@ -32,7 +32,7 @@ function App() {
     <div
       style={{
         background:
-          'linear-gradient(to right, #2980b9, #6dd5fa, #ffffff)' /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */,
+          'linear-gradient(to right, #232526, #414345)' /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */,
       }}
     >
       <Navbar toggle={toggle} />
@@ -42,7 +42,7 @@ function App() {
         <Route path="/week" element={<Week />}></Route>
         <Route path="/about" element={<About />}></Route>
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

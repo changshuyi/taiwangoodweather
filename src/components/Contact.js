@@ -105,10 +105,7 @@ const Contact = () => {
           locationReponse?.map((item, index) => {
             return (
               // Wx(天氣現象)、MaxT(最高溫度)、MinT(最低溫度)、CI(舒適度)、PoP(降雨機率)
-              <Card
-                className="w-96 m-10 py- px-3 font-mono"
-                key={'location_' + index}
-              >
+              <Card className="w-96 m-10 py- px-3" key={'location_' + index}>
                 <CardHeader className="relative h-56 text-5xl border-blue-900 bg-light-blue-50 text-blue-grey-700 p-3 flex">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

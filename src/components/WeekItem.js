@@ -26,7 +26,6 @@ const city = [
   '連江縣',
 ];
 
-// 應該要在pages中呼叫api再丟到component的，之後再來調整
 const WeekItem = () => {
   const [locationWeatherElement, setLocationWeatherElement] = useState();
   const [locationName, setlocationName] = useState('臺北市');
