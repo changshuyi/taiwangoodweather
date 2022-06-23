@@ -10,7 +10,6 @@ const Week = () => {
 
   useEffect(() => {
     const getApiResponse = () => {
-      console.log('locationName = ', locationName);
       axios({
         method: 'GET',
         url:
@@ -37,7 +36,6 @@ const Week = () => {
   }, [locationName]);
 
   useEffect(() => {
-    console.log('12333333');
     const currentForecast = () => {
       axios({
         method: 'GET',
@@ -73,7 +71,11 @@ const Week = () => {
       ) : (
         ''
       )}
-      <MainContent />
+      {locationWeatherElement ? (
+        <MainContent locationWeatherElement={locationWeatherElement} />
+      ) : (
+        ''
+      )}
     </div>
   );
 };

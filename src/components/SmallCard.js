@@ -19,11 +19,15 @@ const SmallCard = (props) => {
   return (
     <div className="bg-darkblue py-4 px-5 flex flex-col items-center space-y-4">
       <p>{dayTitle}</p>
-      <img
+      {/* <img
         src={require(`../images/${img}.png`)}
         alt="weather-icon"
         className="max-h-16"
-      />
+      /> */}
+      <i
+        class="fa-solid fa-sun"
+        style={{ color: '#fffc00', fontSize: '64px' }}
+      ></i>
       <div className="flex justify-between space-x-5">
         <p>
           {max}&deg;{temp}

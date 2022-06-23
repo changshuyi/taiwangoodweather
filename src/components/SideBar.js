@@ -23,6 +23,7 @@ const SideBar = (props) => {
         <SearchLocation
           onClose={() => setIsOpen(false)}
           onSetLocationName={(name) => setLocationName(name)}
+          currentLocationName={locationName}
         />
       ) : (
         <>
@@ -58,6 +59,9 @@ const SideBar = (props) => {
             </h1>
             <h3 className="font-semibold text-4xl text-gray-250">
               {weatherElements.Wx.parameterName}
+            </h3>
+            <h3 className="font-semibold text-4xl text-gray-250">
+              {weatherElements.CI.parameterName}
             </h3>
             <div className="flex flex-col items-center text-center text-gray-350 text-lg space-y-5">
               <p>

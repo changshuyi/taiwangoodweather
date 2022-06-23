@@ -26,8 +26,8 @@ const city = [
 ];
 
 const SearchLocation = (props) => {
-  const { onClose, onSetLocationName } = props;
-  const [locationName, setlocationName] = useState('臺北市');
+  const { onClose, onSetLocationName, currentLocationName } = props;
+  const [locationName, setlocationName] = useState(currentLocationName);
   const [isSelectOpen, setIsSelectOpen] = useState(false);
 
   const handleSelectClick = () => {

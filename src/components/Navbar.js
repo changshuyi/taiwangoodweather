@@ -28,7 +28,7 @@ const Navbar = ({ toggle }) => {
           全台及時天氣
         </Link>
         <Link to="/week" className="pl-4">
-          各地未來一周預報
+          各地未來五天預報
         </Link>
         <Link to="/about" className="pl-4">
           關於我
