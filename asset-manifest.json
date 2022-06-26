@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/taiwangoodweather/static/css/main.607fa3c3.css",
-    "main.js": "/taiwangoodweather/static/js/main.9b11d908.js",
+    "main.js": "/taiwangoodweather/static/js/main.cc8710c5.js",
     "static/js/787.5bd96483.chunk.js": "/taiwangoodweather/static/js/787.5bd96483.chunk.js",
     "static/media/floating-ui.react-dom-interactions.cjs": "/taiwangoodweather/static/media/floating-ui.react-dom-interactions.a88c819a54bcee8651fa.cjs",
     "static/media/Clear.png": "/taiwangoodweather/static/media/Clear.6e4f36b6f663ff2d4d6a.png",
@@ -11,11 +11,11 @@
     "static/media/Sleet.png": "/taiwangoodweather/static/media/Sleet.6ef96c5a2098a6b1a146.png",
     "index.html": "/taiwangoodweather/index.html",
     "main.607fa3c3.css.map": "/taiwangoodweather/static/css/main.607fa3c3.css.map",
-    "main.9b11d908.js.map": "/taiwangoodweather/static/js/main.9b11d908.js.map",
+    "main.cc8710c5.js.map": "/taiwangoodweather/static/js/main.cc8710c5.js.map",
     "787.5bd96483.chunk.js.map": "/taiwangoodweather/static/js/787.5bd96483.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.607fa3c3.css",
-    "static/js/main.9b11d908.js"
+    "static/js/main.cc8710c5.js"
   ]
 }
