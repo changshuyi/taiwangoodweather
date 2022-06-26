@@ -5,6 +5,7 @@ import SearchLocation from './SearchLocation';
 const SideBar = (props) => {
   const { locationName, setLocationName, weatherCurrentElement } = props;
   const [isOpen, setIsOpen] = useState(false);
+
   // 當前天氣所以先只取time[0]的部分
   const weatherElements = weatherCurrentElement.reduce(
     (neededElements, item) => {
@@ -16,6 +17,10 @@ const SideBar = (props) => {
     },
     {}
   );
+  let imgFolder = 'day';
+  if (moment().hours() > 18 && moment().hours() <= 24) {
+    imgFolder = 'night';
+  }
 
   return (
     <div className="flex flex-col min-h-screen bg-darkblue w-full lg:w-1/3 p-7 lg:p-4 xl:p-7 space-y-10 overflow-x-hidden">
@@ -46,7 +51,7 @@ const SideBar = (props) => {
               className="opacity-10 absolute max-w-52"
             />
             <img
-              src={require('../images/Shower.png')}
+              src={require(`../images/${imgFolder}/${weatherElements.Wx.parameterValue}.png`)}
               alt="weather"
               className="max-h-48"
             />
