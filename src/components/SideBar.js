@@ -17,6 +17,7 @@ const SideBar = (props) => {
     },
     {}
   );
+
   let imgFolder = 'day';
   if (moment().hours() > 18 && moment().hours() <= 24) {
     imgFolder = 'night';

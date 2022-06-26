@@ -7,7 +7,7 @@ const MainContent = (props) => {
   let fiveDays = [];
   let fiveDaysMaxT = [];
   let fiveDaysMinT = [];
-  console.log('locationWeatherElement = ', locationWeatherElement);
+  let fiveDaysWx = [];
 
   const locationWeatherEle = locationWeatherElement.reduce(
     (neededElements, item) => {
@@ -26,7 +26,7 @@ const MainContent = (props) => {
 
   const locatioFiveDaysWeatherEle = locationWeatherElement.reduce(
     (neededElements, item) => {
-      if (['MaxT', 'MinT'].includes(item.elementName)) {
+      if (['MaxT', 'MinT', 'Wx'].includes(item.elementName)) {
         neededElements[item.elementName] = item.time;
       }
 
@@ -35,11 +35,16 @@ const MainContent = (props) => {
     {}
   );
 
+  console.log('locationWeatherEle = ', locationWeatherEle);
+
   for (let i = 0; i < locatioFiveDaysWeatherEle.MaxT.length; i += 2) {
     fiveDaysMaxT.push(locatioFiveDaysWeatherEle.MaxT[i]);
   }
   for (let i = 0; i < locatioFiveDaysWeatherEle.MinT.length; i += 2) {
     fiveDaysMinT.push(locatioFiveDaysWeatherEle.MinT[i]);
+  }
+  for (let i = 0; i < locatioFiveDaysWeatherEle.Wx.length; i += 2) {
+    fiveDaysWx.push(locatioFiveDaysWeatherEle.Wx[i]);
   }
 
   const showFiveDays = () => {
@@ -47,7 +52,11 @@ const MainContent = (props) => {
       fiveDays.push(
         <SmallCard
           dayTitle={moment(fiveDaysMaxT[i].startTime).format('MM-DD')}
-          img="Shower"
+          img={
+            parseInt(fiveDaysWx[i].elementValue[1].value) < 9
+              ? fiveDaysWx[i].elementValue[1].value.substr(1, 1)
+              : fiveDaysWx[i].elementValue[1].value
+          }
           max={fiveDaysMaxT[i].elementValue[0].value}
           min={fiveDaysMinT[i].elementValue[0].value}
           temp="C"
