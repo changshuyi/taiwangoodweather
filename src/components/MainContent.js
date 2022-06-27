@@ -73,14 +73,14 @@ const MainContent = (props) => {
 
   return (
     <div className="text-gray-150 p-10 flex-grow">
-      <div className="space-x-3 text-right">
+      {/* <div className="space-x-3 text-right">
         <button className="bg-gray-150 rounded-full w-10 h-10 text-darkblue font-bold text-xl">
           &deg;C
         </button>
         <button className="bg-[#585676] rounded-full w-10 h-10 text-gray-150 font-bold text-xl">
           &deg;F
         </button>
-      </div>
+      </div> */}
 
       {showFiveDays()}
 

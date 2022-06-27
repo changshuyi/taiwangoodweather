@@ -1,12 +1,8 @@
-import moment from 'moment';
-
 const SmallCard = (props) => {
   const { dayTitle, img, min, max, temp } = props;
 
   let imgFolder = 'day';
-  // if (moment().hours() > 18 && moment().hours() <= 24) {
-  //   imgFolder = 'night';
-  // }
+
   return (
     <div className="bg-darkblue py-4 px-5 flex flex-col items-center space-y-4">
       <p>{dayTitle}</p>

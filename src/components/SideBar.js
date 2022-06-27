@@ -24,7 +24,7 @@ const SideBar = (props) => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-darkblue w-full lg:w-1/3 p-7 lg:p-4 xl:p-7 space-y-10 overflow-x-hidden">
+    <div className="flex flex-col  bg-darkblue w-full lg:w-1/3 p-7 lg:p-4 xl:p-7 space-y-10 overflow-x-hidden">
       {isOpen ? (
         <SearchLocation
           onClose={() => setIsOpen(false)}

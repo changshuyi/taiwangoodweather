@@ -32,7 +32,6 @@ const WeekItem = () => {
 
   useEffect(() => {
     const getApiResponse = () => {
-      console.log('locationName = ', locationName);
       axios({
         method: 'GET',
         url:

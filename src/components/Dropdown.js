@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Dropdown = ({ isOpen, toggle }) => {
+const Dropdown = ({ isOpen }) => {
   return (
     <div
       className={
@@ -10,15 +10,15 @@ const Dropdown = ({ isOpen, toggle }) => {
           : 'hidden'
       }
     >
+      <Link to="/week" className="p-4">
+        各地未來五天預報
+      </Link>
       <Link to="/taiwangoodweather" className="p-4">
         全台及時天氣
       </Link>
-      <Link to="/week" className="p-4">
-        一周天氣
-      </Link>
-      <Link to="/about" className="p-4">
+      {/* <Link to="/about" className="p-4">
         About
-      </Link>
+      </Link> */}
       {/* <Link to="/contact" className="p-4">
         Contact
       </Link> */}

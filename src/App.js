@@ -34,15 +34,16 @@ function App() {
         background:
           'linear-gradient(to right, #232526, #414345)' /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */,
       }}
+      className="h-screen"
     >
       <Navbar toggle={toggle} />
       <Dropdown isOpen={isOpen} toggle={toggle} />
       <Routes>
-        <Route path="/taiwangoodweather" exact element={<Home />}></Route>
         <Route path="/week" element={<Week />}></Route>
-        <Route path="/about" element={<About />}></Route>
+        <Route path="/taiwangoodweather" exact element={<Home />}></Route>
+        {/* <Route path="/about" element={<About />}></Route> */}
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

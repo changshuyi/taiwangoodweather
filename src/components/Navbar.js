@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Navbar = ({ toggle }) => {
   return (
-    <nav className="flex justify-between item-center h-16 text-white relative shadow-sm pt-3 bg-gradient-to-r to-blue-100 from-cyan-80 ">
-      <Link to="/" className="pl-8 text-2xl">
+    <nav className="flex justify-between item-center h-12 text-white relative shadow-sm pt-3 bg-gradient-to-r to-blue-100 from-cyan-80 ">
+      <Link to="/week" className="pl-8 text-2xl">
         寶島好天氣
       </Link>
       <div className="px4 cursor-pointer md:hidden" onClick={toggle}>
@@ -24,18 +24,18 @@ const Navbar = ({ toggle }) => {
         </svg>
       </div>
       <div className="pr-8 md:block hidden">
-        <Link to="/taiwangoodweather" className="pl-4">
-          全台及時天氣
-        </Link>
         <Link to="/week" className="pl-4">
           各地未來五天預報
         </Link>
-        <Link to="/about" className="pl-4">
+        <Link to="/taiwangoodweather" className="pl-4">
+          全台及時天氣
+        </Link>
+        {/* <Link to="/about" className="pl-4">
           關於我
         </Link>
         <Link to="/contact" className="pl-4">
           Contact
-        </Link>
+        </Link> */}
       </div>
     </nav>
   );
