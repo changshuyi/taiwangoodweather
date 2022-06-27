@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/taiwangoodweather/static/css/main.d7ba6766.css",
-    "main.js": "/taiwangoodweather/static/js/main.2a2607c8.js",
+    "main.css": "/taiwangoodweather/static/css/main.5e366334.css",
+    "main.js": "/taiwangoodweather/static/js/main.a8f0bb32.js",
     "static/js/787.5bd96483.chunk.js": "/taiwangoodweather/static/js/787.5bd96483.chunk.js",
     "static/media/floating-ui.react-dom-interactions.cjs": "/taiwangoodweather/static/media/floating-ui.react-dom-interactions.a88c819a54bcee8651fa.cjs",
     "static/media/Cloud-background.png": "/taiwangoodweather/static/media/Cloud-background.f88244c26c2492e3c5f1.png",
     "index.html": "/taiwangoodweather/index.html",
-    "main.d7ba6766.css.map": "/taiwangoodweather/static/css/main.d7ba6766.css.map",
-    "main.2a2607c8.js.map": "/taiwangoodweather/static/js/main.2a2607c8.js.map",
+    "main.5e366334.css.map": "/taiwangoodweather/static/css/main.5e366334.css.map",
+    "main.a8f0bb32.js.map": "/taiwangoodweather/static/js/main.a8f0bb32.js.map",
     "787.5bd96483.chunk.js.map": "/taiwangoodweather/static/js/787.5bd96483.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d7ba6766.css",
-    "static/js/main.2a2607c8.js"
+    "static/css/main.5e366334.css",
+    "static/js/main.a8f0bb32.js"
   ]
 }
