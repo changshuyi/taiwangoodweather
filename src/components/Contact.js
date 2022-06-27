@@ -11,6 +11,10 @@ import {
 
 const Contact = () => {
   const [locationReponse, setLocationReponse] = useState();
+  let imgFolder = 'day';
+  if (moment().hours() > 18 && moment().hours() <= 24) {
+    imgFolder = 'night';
+  }
   // 當前天氣所以先只取time[0]的部分
   const weatherCurrentElement = (element) => {
     const weatherElements = element.reduce((neededElements, item) => {
@@ -70,6 +74,23 @@ const Contact = () => {
     );
   };
 
+  const weatherCurrentElementImg = (element) => {
+    const weatherElements = element.reduce((neededElements, item) => {
+      if (['Wx'].includes(item.elementName)) {
+        neededElements[item.elementName] = item.time[0].parameter;
+      }
+
+      return neededElements;
+    }, {});
+
+    return (
+      <img
+        src={require(`../images/${imgFolder}/${weatherElements.Wx.parameterValue}.png`)}
+        alt="weather"
+        className="max-h-16"
+      />
+    );
+  };
   const getApiResponse = () => {
     axios({
       method: 'GET',
@@ -82,7 +103,6 @@ const Contact = () => {
       },
     })
       .then((response) => {
-        console.log(response?.data);
         setLocationReponse(response?.data?.records?.location);
       })
       .catch((_, textStatus, thrownError) => {
@@ -124,6 +144,10 @@ const Contact = () => {
                     />
                   </svg>
                   {item?.locationName}
+
+                  <div className="px-7 py-7">
+                    {weatherCurrentElementImg(item?.weatherElement)}
+                  </div>
                 </CardHeader>
                 {weatherCurrentElement(item?.weatherElement)}
               </Card>

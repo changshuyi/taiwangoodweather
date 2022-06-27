@@ -35,8 +35,6 @@ const MainContent = (props) => {
     {}
   );
 
-  console.log('locationWeatherEle = ', locationWeatherEle);
-
   for (let i = 0; i < locatioFiveDaysWeatherEle.MaxT.length; i += 2) {
     fiveDaysMaxT.push(locatioFiveDaysWeatherEle.MaxT[i]);
   }

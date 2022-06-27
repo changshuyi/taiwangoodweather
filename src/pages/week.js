@@ -20,8 +20,6 @@ const Week = () => {
         },
       })
         .then((response) => {
-          console.log(response?.data);
-          // 可能可以用座標位置加入地圖api
           setLocationWeatherElement(
             response?.data?.records?.locations[0]?.location[0].weatherElement
           );
@@ -47,7 +45,6 @@ const Week = () => {
         },
       })
         .then((response) => {
-          console.log(response?.data?.records?.location[0].weatherElement);
           setWeatherCurrentElement(
             response?.data?.records?.location[0].weatherElement
           );
